@@ -1,0 +1,54 @@
+apiVersion: v1
+entries:
+  e2node-terminator:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2025-02-13T03:31:02.683430971Z"
+    description: Standard xApp Helm Chart
+    digest: ec10e1e55bb2ad3e6eb58a7921b99db7ac3fa2c578b9eedb22ef0383ae191848
+    name: e2node-terminator
+    urls:
+    - charts/e2node-terminator-0.0.1.tgz
+    version: 0.0.1
+  hw-go:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2025-01-23T05:28:41.833887751Z"
+    description: Standard xApp Helm Chart
+    digest: 78ea20f840b408b7e6aa7c47319ed3e0e05a1e13fe14a4b5498f4b61a8ef268a
+    name: hw-go
+    urls:
+    - charts/hw-go-1.0.0.tgz
+    version: 1.0.0
+  kpimon-go:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2024-09-19T06:25:17.843940607Z"
+    description: Standard xApp Helm Chart
+    digest: 45090e25893a454860d472dda43123566c988eef2932ded58af1fcd1e71fff59
+    name: kpimon-go
+    urls:
+    - charts/kpimon-go-2.0.2-alpha.tgz
+    version: 2.0.2-alpha
+  mobiexpert-xapp:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2024-09-19T06:21:04.087371999Z"
+    description: Standard xApp Helm Chart
+    digest: d58fb853657f362fdfbacd2dba08811559450e293b3a34784086a018cb8e7fe9
+    name: mobiexpert-xapp
+    urls:
+    - charts/mobiexpert-xapp-0.0.1.tgz
+    version: 0.0.1
+  mobiflow-auditor:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2025-02-03T04:28:58.802092147Z"
+    description: Standard xApp Helm Chart
+    digest: fec02b1903c81dc4923ab47b355cf05ec1f785348acd5d57ce8ed8298716903c
+    name: mobiflow-auditor
+    urls:
+    - charts/mobiflow-auditor-0.0.1.tgz
+    version: 0.0.1
+generated: "2025-02-13T03:31:03Z"
+serverInfo: {}

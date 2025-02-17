@@ -1,0 +1,11 @@
+newrt|start
+rte|13111|127.0.0.1:4560
+rte|12020|127.0.0.1:4560     # RIC_SUBSCRIPTION_DELETE_REQ -> E2DisconnectXapp로 전달
+rte|12070|127.0.0.1:4560     # RIC_E2NODE_CONFIG_UPDATE -> E2DisconnectXapp로 전달
+rte|12040|127.0.0.1:4560     # RIC_CONTROL_REQ -> E2DisconnectXapp로 전달
+rte|12004|127.0.0.1:4560     # RIC_E2_RESET_REQ -> E2DisconnectXapp로 전달
+rte|12021|127.0.0.1:4560     # RIC_SUBSCRIPTION_DELETE_RESP -> E2DisconnectXapp가 응답 받음
+rte|12071|127.0.0.1:4560     # RIC_E2NODE_CONFIG_UPDATE_ACK -> E2DisconnectXapp가 응답 받음
+rte|20011|service-ricplt-a1mediator-rmr.ricplt:4562
+rte|20012|service-ricplt-a1mediator-rmr.ricplt:4562
+newrt|end

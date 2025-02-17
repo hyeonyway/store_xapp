@@ -1,0 +1,62 @@
+{
+    "name": "e2node-terminator",
+    "version": "0.0.1",
+    "containers": [
+      {
+        "name": "e2node-terminator",
+        "image": {
+          "registry": "5gsec.se-ran.org:10004",
+          "name": "xapp/e2node-terminator",
+          "tag": "0.0.1"
+        }
+      }
+    ],
+    "messaging": {
+      "ports": [
+        {
+          "name": "http",
+          "container": "e2node-terminator",
+          "port": 8080,
+          "description": "http service"
+        },
+        {
+          "name": "rmrdata",
+          "container": "e2node-terminator",
+          "port": 4560,
+          "rxMessages": [
+            "RIC_E2_SETUP_RESP",
+            "RIC_E2_SETUP_FAILURE",
+            "RIC_E2_RESET_RESP"
+          ],
+          "txMessages": [
+            "RIC_E2_RESET_REQ"
+          ],
+          "mtypes": [
+            { "name": "RIC_E2_RESET_REQ", "id": 12004 }
+          ],
+          "policies": [1],
+          "description": "rmr data port for e2node-terminator"
+        }
+      ]
+    },
+    "rmr": {
+      "protPort": "tcp:4560",
+      "maxSize": 2072,
+      "numWorkers": 1,
+      "txMessages": [
+        "RIC_E2_RESET_REQ"
+      ],
+      "rxMessages": [
+        "RIC_E2_SETUP_RESP",
+        "RIC_E2_SETUP_FAILURE",
+        "RIC_E2_RESET_RESP"
+      ],
+      "policies": [1]
+    },
+    "controls": {
+      "fileStrorage": false
+    },
+    "db": {
+      "waitForSdl": false
+    }
+  }

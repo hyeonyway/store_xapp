@@ -1,0 +1,7 @@
+newrt|start
+rte|10004|localhost:4560
+rte|10005|localhost:4591
+rte|20011|service-ricplt-a1mediator-rmr.ricplt:4562
+rte|20012|service-ricplt-a1mediator-rmr.ricplt:4562
+rte|12004|service-ricplt-e2mgr-rmr.ricplt:4563  # 추가 (RIC_E2_RESET_REQ 메시지 목적지)
+newrt|end

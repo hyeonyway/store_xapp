@@ -1,0 +1,85 @@
+{
+    "name": "e2node-terminator",
+    "version": "0.0.1",
+    "containers": [
+      {
+        "name": "e2node-terminator",
+        "image": {
+          "registry": "5gsec.se-ran.org:10004",
+          "name": "xapp/e2node-terminator",
+          "tag": "0.0.1"
+        }
+      }
+    ],
+    "messaging": {
+      "ports": [
+        {
+          "name": "http",
+          "container": "e2node-terminator",
+          "port": 8080,
+          "description": "http service"
+        },
+        {
+          "name": "rmrroute",
+          "container": "e2node-terminator",
+          "port": 4561,
+          "description": "rmr route port for e2node-terminator xapp"
+        },
+        {
+          "name": "rmrdata",
+          "container": "e2node-terminator",
+          "port": 4560,
+          "rxMessages": [
+            "RIC_E2_SETUP_RESP",
+            "RIC_E2_SETUP_FAILURE",
+            "RIC_E2_RESET_RESP",
+            "RIC_E2_SUB_DEL_RESP",
+            "RIC_E2NODE_CONFIG_UPDATE_ACK",
+            "RIC_SUB_RESP",
+            "RIC_SUB_FAILURE"
+          ],
+          "txMessages": [
+            "RIC_SUB_REQ",
+            "RIC_SUB_DEL_REQ",
+            "RIC_E2_RESET_REQ",
+            "RIC_E2NODE_CONFIG_UPDATE"
+          ],
+          "mtypes": [
+            { "name": "RIC_E2_RESET_REQ", "id": 12004 },
+            { "name": "RIC_E2_SUBSCRIPTION_DELETE_REQ", "id": 12020 },
+            { "name": "RIC_E2_SUBSCRIPTION_DELETE_RESP", "id": 12021 },
+            { "name": "RIC_E2NODE_CONFIG_UPDATE", "id": 12070 },
+            { "name": "RIC_E2NODE_CONFIG_UPDATE_ACK", "id": 12071 }
+          ],
+          "policies": [1],
+          "description": "rmr data port for e2node-terminator"
+        }
+      ]
+    },
+    "rmr": {
+      "protPort": "tcp:4560",
+      "maxSize": 2072,
+      "numWorkers": 1,
+      "txMessages": [
+        "RIC_E2_RESET_REQ",
+        "RIC_E2_SUB_DEL_REQ",
+        "RIC_E2NODE_CONFIG_UPDATE",
+        "RIC_SUB_REQ"
+      ],
+      "rxMessages": [
+        "RIC_E2_SETUP_RESP",
+        "RIC_E2_SETUP_FAILURE",
+        "RIC_E2_RESET_RESP",
+        "RIC_E2_SUB_DEL_RESP",
+        "RIC_SUB_RESP",
+        "RIC_E2NODE_CONFIG_UPDATE_ACK"
+      ],
+      "policies": [1]
+    },
+    "controls": {
+      "fileStorage": false
+    },
+    "db": {
+      "waitForSdl": false
+    }
+  }
